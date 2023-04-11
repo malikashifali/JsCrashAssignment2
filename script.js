@@ -1,17 +1,21 @@
  //  ------------------ task1 --------------------------
 
- function createAdder(num) {
-    return function(x) {
-      return x + num;
-    }
-  }
+ function createAdd() {
+    function createAdder(num) {
+        return function(x) {
+          return x + num;
+        }
+      }
+      
+      const add5 = createAdder(5);
+    console.log("answer of Question 1 is = " + add5(+prompt("please enter a number")));
+ }
   
-  const add5 = createAdder(5);
-console.log("answer of Question 1 is = " + add5(+prompt("please enter a number"))); 
 
 
 //  ------------------ task2 --------------------------
-
+ function recursiveSrch (){
+    
 let arr = ["1", "3", "5", "7", "9"];
 let num = prompt("please enter number to find in array");
 
@@ -30,53 +34,62 @@ function recursiveSearch(arr, num) {
 
   let findValue = recursiveSearch(arr, num);
   console.log("Question 2 answer is = " + findValue)
+}
   
 // -------------------------- task 3 ----------------------------
-
+function addPara(){
+    
 function addParagraph(text) {
     const paragraph = document.createElement('p'); 
     paragraph.textContent = text; 
-    document.body.appendChild(paragraph);
+    document.getElementById("list").appendChild(paragraph);
   }
 
-  addParagraph('Hello, world!');
+  addParagraph('New Paragrah Is Created');
+}
 
   // -------------------------- task 4 ----------------------------
 
-  function addListItem(text) {
+  function addList() {
+    function addListItem(text) {
     
-    const newItem = document.createElement('li');
-    newItem.textContent = text;
-    const list = document.querySelector('ul');
-    list.appendChild(newItem);
+        const newItem = document.createElement('li');
+        newItem.textContent = text;
+        const list = document.querySelector('ul');
+        list.appendChild(newItem);
+      }
+    
+      addListItem("list item created with javaScript")
   }
-
-  addListItem("list item created with javaScript")
 
   // -------------------------- task 5 ----------------------------
 
-  function changeBackgroundColor(element, color) {
-    element.style.backgroundColor = color;
+  function change(){
+    function changeBackgroundColor(element, color) {
+        element.style.backgroundColor = color;
+      }
+      const myDiv = document.getElementById('body');
+      changeBackgroundColor(myDiv, 'pink');
   }
-  const myDiv = document.getElementById('body');
-  changeBackgroundColor(myDiv, 'pink');
 
     // -------------------------- task 6 ----------------------------
 
-    function saveObjectToLocalStorage(key, object) {
+    function saveLocal() {
+        function saveObjectToLocalStorage(key, object) {
         
-          const serializedObject = JSON.stringify(object);
-          localStorage.setItem(key, serializedObject);
-        
-      }
-      const myObject = "kashif";
-      saveObjectToLocalStorage('userName', myObject);
+            const serializedObject = JSON.stringify(object);
+            localStorage.setItem(key, serializedObject);
+          
+        }
+        const myObject = "kashif";
+        saveObjectToLocalStorage('userName', myObject);
+    }
             
-// -------------------------- task 7 ----------------------------
-
 
 // -------------------------- task 8 ----------------------------
 
+function saveLocal1() {
+    
 function saveObjectToLocalStorage1(obj) {
     Object.keys(obj).forEach(function(key) {
       localStorage.setItem(key, obj[key]);
@@ -91,6 +104,8 @@ function saveObjectToLocalStorage1(obj) {
   }
 
   saveObjectToLocalStorage1('height');
+}
+
 
 
     
